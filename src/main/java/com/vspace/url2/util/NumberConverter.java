@@ -1,9 +1,10 @@
-package com.vspace.url2.web;
+package com.vspace.url2.util;
 
 public class NumberConverter {
 	
-	final String baseDigits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-	String fromDecimalToOtherBase(int base, int decimalnumber) {
+	static String baseDigits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	
+	public static String fromDecimalToOtherBase(int base, int decimalnumber) {
 		String tempValue = decimalnumber == 0 ? "0" : "";
 
 		int mod = 0;
@@ -16,7 +17,7 @@ public class NumberConverter {
 		return tempValue;
 	}
 
-	int fromOtherBaseToDecimal(int base, String number) {
+	public static int fromOtherBaseToDecimal(int base, String number) {
 		int iterator = number.length();
 		int returnValue = 0;
 
@@ -33,24 +34,23 @@ public class NumberConverter {
 		return returnValue;
 	}
 
-	int fromBase62(String number) {
+	public static int fromBase62(String number) {
 		return fromOtherBaseToDecimal(62, number);
 	}
 
-	String toBase62(int decimalnumber) {
+	public static String toBase62(int decimalnumber) {
 		return fromDecimalToOtherBase(62, decimalnumber);
 	}
 
 	public static void main(String[] args) {
-		NumberConverter obj = new NumberConverter();
 
 		int number = 998989;
 		System.out.println(number);
 
-		String base62 = obj.toBase62(number);
+		String base62 = NumberConverter.toBase62(number);
 		System.out.println(base62);
 
-		number = obj.fromBase62(base62);
+		number = NumberConverter.fromBase62(base62);
 		System.out.println(number);
 
 	}

@@ -9,7 +9,7 @@
 <body>
 
 	URL1 : <a href="${url1}">${url1}</a><br/>
-	URL2 : <a href="${url2}">${url2}</a>
+	URL2 : <a href="http://localhost:8080/url2/${url2}">http://localhost:8080/url2/${url2}</a>
 
 </body>
 </html>

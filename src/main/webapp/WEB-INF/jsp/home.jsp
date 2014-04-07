@@ -8,7 +8,7 @@
 </head>
 <body>
 
-	<h2>ur2.in !!!</h2>
+	<h2>url2.in !!!</h2>
 	
 	
 	<form method="POST">
