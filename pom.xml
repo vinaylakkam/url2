@@ -15,6 +15,7 @@
 
 		<!-- Spring -->
 		<spring-framework.version>4.0.3.RELEASE</spring-framework.version>
+		<spring-data-mongodb.version>1.4.1.RELEASE</spring-data-mongodb.version>
 
 		<!-- Java EE / Java SE dependencies -->
 		<jsp.version>2.2</jsp.version>
@@ -98,6 +99,17 @@
 			<version>${hamcrest.version}</version>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.mongodb</groupId>
+			<artifactId>mongo-java-driver</artifactId>
+			<version>2.12.0</version>
+		</dependency>
+		<!-- <dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-mongodb</artifactId>
+			<version>${spring-data-mongodb.version}</version>
+		</dependency> -->
 	</dependencies>
 	<build>
 		<finalName>url2</finalName>
