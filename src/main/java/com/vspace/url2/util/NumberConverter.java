@@ -4,10 +4,10 @@ public class NumberConverter {
 	
 	static String baseDigits = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	
-	public static String fromDecimalToOtherBase(Integer base, Integer decimalnumber) {
+	private static String fromDecimalToOtherBase(int base, int decimalnumber) {
 		String tempValue = decimalnumber == 0 ? "0" : "";
 
-		Integer mod = 0;
+		int mod = 0;
 		while (decimalnumber != 0) {
 			mod = decimalnumber % base;
 			tempValue = baseDigits.substring(mod, mod + 1) + tempValue;
@@ -17,11 +17,11 @@ public class NumberConverter {
 		return tempValue;
 	}
 
-	public static Integer fromOtherBaseToDecimal(Integer base, String number) {
-		Integer iterator = number.length();
-		Integer returnValue = 0;
+	private static int fromOtherBaseToDecimal(int base, String number) {
+		int iterator = number.length();
+		int returnValue = 0;
 
-		Integer multiplier = 1;
+		int multiplier = 1;
 
 		while (iterator > 0) {
 			returnValue = returnValue
@@ -34,17 +34,17 @@ public class NumberConverter {
 		return returnValue;
 	}
 
-	public static Integer fromBase62(String number) {
+	public static int fromBase62(String number) {
 		return fromOtherBaseToDecimal(62, number);
 	}
 
-	public static String toBase62(Integer decimalnumber) {
+	public static String toBase62(int decimalnumber) {
 		return fromDecimalToOtherBase(62, decimalnumber);
 	}
 
 	public static void main(String[] args) {
 
-		Integer number = 998989;
+		int number = 998989;
 		System.out.println(number);
 
 		String base62 = NumberConverter.toBase62(number);

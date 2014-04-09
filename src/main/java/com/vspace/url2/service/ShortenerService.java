@@ -21,7 +21,7 @@ public class ShortenerService {
 
 	public String saveLink(String url1) {
 
-		String url2 = shortIt(new Random().nextInt());
+		String url2 = shortIt(new Random().nextInt(999999999));
 
 		Link link = new Link(url1, url2);
 		
