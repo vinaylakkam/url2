@@ -32,4 +32,8 @@ public class ShortenerService {
 
 		return null;
 	}
+
+	public String getLink(String url2) {
+		return linkDao.getLink(url2);
+	}
 }

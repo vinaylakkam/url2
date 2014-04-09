@@ -16,26 +16,27 @@ public class HomeController {
 
 	@Autowired
 	ShortenerService shortenerService;
-	
+
 	@RequestMapping
 	public String home() {
 		return "home";
 	}
-	
+
 	@RequestMapping("/{url2}")
 	public String hitUrl2(@PathVariable String url2) {
+		String url1 = shortenerService.getLink(url2);
 		
-		return "redirect:" + "http://www.google.com";
+		return "redirect:" + url1;
 	}
-	
+
 	@RequestMapping(method = RequestMethod.POST)
 	public String shortIt(@RequestParam String url1, Model model) {
-		
-		String url2 = shortenerService.shortIt(999);
-		
+
+		String url2 = shortenerService.saveLink(url1);
+
 		model.addAttribute("url1", url1);
 		model.addAttribute("url2", url2);
-		
+
 		return "shortIt";
 	}
 }
